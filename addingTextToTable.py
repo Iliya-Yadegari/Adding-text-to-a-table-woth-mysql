@@ -22,6 +22,9 @@ def text_adder():
 
 window = Tk()
 
+window.title('Text to table')
+window.iconbitmap('txt_adder_ico.ico')
+
 name_label = Label(window,text = 'Enter your name ===>').grid(row = 0, column = 0, padx = 10, pady = 10)
 name_entry = Entry(window)
 lastName_lbl = Label(window,text = 'Enter you last name ===>').grid(row = 1, column = 0, padx = 10, pady = 10)
