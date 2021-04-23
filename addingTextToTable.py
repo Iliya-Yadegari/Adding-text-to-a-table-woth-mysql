@@ -1,7 +1,8 @@
 from tkinter import *
 import mysql.connector as msc
+import TextToTableModule as tttm
 
-def text_adder():
+def text_adder(name_e,lastName_e,age_e):
     mydb = msc.connect(
         host = 'localhost',
         user = 'root',
@@ -31,7 +32,7 @@ lastName_lbl = Label(window,text = 'Enter you last name ===>').grid(row = 1, col
 lastName_entry = Entry(window)
 age_lbl = Label(window,text = 'Enter your age ===>').grid(row = 2, column = 0, padx = 10, pady = 10)
 age_entry = Entry(window)
-submit_btn = Button(window,text = 'Submit',width = 20,height = 3,command = text_adder).grid(row = 3, column = 0, padx = 10, pady = 10)
+submit_btn = Button(window,text = 'Submit',width = 20,height = 3,command = lambda: tttm.text_adder(name_entry.get(),lastName_entry.get(),age_entry.get())).grid(row = 3, column = 0, padx = 10, pady = 10)
 
 name_entry.grid(row = 0, column = 1, padx = 10, pady = 10)
 lastName_entry.grid(row = 1, column = 1, padx = 10, pady = 10)
